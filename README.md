@@ -2,52 +2,7 @@
 
 A production-ready system that automatically analyzes legal contracts, extracts key terms, identifies risks, and flags unusual clauses using Amazon Bedrock and supporting AWS services.
 
-## 🏗️ Architecture
-
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   React Frontend │    │   API Gateway    │    │  Lambda Functions│
-│   (TypeScript)   │◄──►│                  │◄──►│   (TypeScript)   │
-│                 │    │                  │    │                 │
-│ • Upload UI     │    │ • REST Endpoints │    │ • Upload Handler │
-│ • Results View  │    │ • CORS Support   │    │ • AI Processing  │
-│ • Dashboard     │    │ • Authentication │    │ • Results API    │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                                                         │
-                       ┌─────────────────┐              │
-                       │   Amazon S3     │◄─────────────┤
-                       │                 │              │
-                       │ • Document      │              │
-                       │   Storage       │              │
-                       │ • Web Hosting   │              │
-                       └─────────────────┘              │
-                                                         │
-                       ┌─────────────────┐              │
-                       │   DynamoDB      │◄─────────────┤
-                       │                 │              │
-                       │ • Metadata      │              │
-                       │ • Analysis      │              │
-                       │   Results       │              │
-                       └─────────────────┘              │
-                                                         │
-                       ┌─────────────────┐              │
-                       │  Amazon Bedrock │◄─────────────┤
-                       │                 │              │
-                       │ • Claude AI     │              │
-                       │ • Contract      │              │
-                       │   Analysis      │              │
-                       └─────────────────┘              │
-                                                         │
-                       ┌─────────────────┐              │
-                       │  Amazon Textract│◄─────────────┘
-                       │                 │
-                       │ • PDF/DOCX      │
-                       │   Text Extract  │
-                       │                 │
-                       └─────────────────┘
-```
-
-## 🚀 Features
+## Features
 
 ### Core Functionality
 - **Document Upload**: Drag-and-drop interface supporting PDF, DOCX, and TXT files
@@ -69,7 +24,7 @@ A production-ready system that automatically analyzes legal contracts, extracts 
 - **Color-coded Indicators**: Visual risk assessment with intuitive color scheme
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Infrastructure**: AWS CDK (TypeScript)
 - **Backend**: Node.js Lambda functions (TypeScript)
@@ -79,7 +34,7 @@ A production-ready system that automatically analyzes legal contracts, extracts 
 - **API**: API Gateway with CORS support
 - **Monitoring**: CloudWatch logs, X-Ray tracing
 
-## 📦 Installation & Deployment
+## Installation & Deployment
 
 ### Prerequisites
 - Node.js 18+ and npm
@@ -124,7 +79,7 @@ npm run build
 aws s3 sync dist/ s3://<website-bucket-name> --delete
 ```
 
-## 🔧 Development
+## Development
 
 ### Local Development
 ```bash
@@ -156,7 +111,7 @@ npm test
 └── README.md
 ```
 
-## 🔒 Security Features
+## Security Features
 
 - **Encrypted Storage**: S3 server-side encryption for all documents
 - **IAM Least Privilege**: Minimal permissions for all AWS resources
@@ -164,7 +119,7 @@ npm test
 - **Data Lifecycle**: Automatic document deletion after 90 days
 - **CORS Protection**: Properly configured cross-origin policies
 
-## 💰 Cost Optimization
+## Cost Optimization
 
 - **Serverless Architecture**: Pay-per-use Lambda functions
 - **DynamoDB On-Demand**: Scales automatically with usage
@@ -172,7 +127,7 @@ npm test
 - **Efficient AI Usage**: Optimized prompts to minimize Bedrock costs
 - **CloudWatch Monitoring**: Track usage and optimize performance
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 - **Processing Time**: < 60 seconds for 10-page contracts
 - **Accuracy**: 90%+ key term extraction accuracy
@@ -180,7 +135,7 @@ npm test
 - **Concurrent Users**: Scales automatically with demand
 - **Availability**: 99.9% uptime with AWS managed services
 
-## 🧪 Testing
+## Testing
 
 ### Sample Documents
 The `samples/` directory contains test contracts for demonstration:
@@ -194,7 +149,7 @@ The `samples/` directory contains test contracts for demonstration:
 3. Review comprehensive analysis results
 4. Export reports in PDF or JSON format
 
-## 🚀 Demo Workflow
+## Demo Workflow
 
 1. **Upload**: Drag and drop a contract file
 2. **Process**: Watch real-time progress as AI analyzes the document
@@ -202,7 +157,7 @@ The `samples/` directory contains test contracts for demonstration:
 4. **Export**: Generate professional PDF reports
 5. **Dashboard**: View all processed documents with status tracking
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - **Multi-language Support**: Analyze contracts in different languages
 - **Template Comparison**: Compare against industry-specific templates
@@ -210,11 +165,11 @@ The `samples/` directory contains test contracts for demonstration:
 - **API Integration**: RESTful API for third-party integrations
 - **Advanced Analytics**: Historical analysis and trend reporting
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -222,7 +177,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 4. Add tests for new functionality
 5. Submit a pull request
 
-## 📞 Support
+## Support
 
 For questions or issues:
 - Create an issue in the GitHub repository
@@ -231,4 +186,4 @@ For questions or issues:
 
 ---
 
-**Built with ❤️ using AWS, TypeScript, and modern web technologies**
+**Built using AWS, TypeScript, and modern web technologies**
